@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- <h1>Fetch</h1> -->
+    <header>
+        <div class="playerName">
+
+            <label for="player_1">player_1</label>
+            <input type="text" id="player_1">
+        </div>
+        <div class="playerName">
+            <label for="player_2">player_2</label>
+            <input type="text" id="player_2">
+        </div>
+        <button id="startBtn" onclick="pokemon()">Start</button>
+
+    </header>
+    <div class="hidden scoreDiv">
+        <p class="score playerOneScore">0</p>
+        <p id="playerTurn">player_1 Turn</p>
+        <p class="score playerTwoScore">0</p>
+    </div>
+
+    <div id="wrapperDiv"></div>
+
+    <div class="hidden resultCard">
+        <h2>Hurray!</h2>
+        <h2 id="result""></h2>
+        <h2>Score</h2>
+        <h2 id="finalScore"></h2>
+    </div>
+
+
+    <template id="image-template">
+        <div>
+            <img src="" alt="image" id="image" class="hidden">
+            <h4 id="name" class="hidden">
+            </h4>
+        </div>
+    </template>
+</body>
+
+</html>

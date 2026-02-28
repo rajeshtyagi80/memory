@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
+    margin-top: 20px;
+    color: white;
+}
+
+.playerName{
+padding: 5px;
+}
+
+input, button, label{
+    display: inline-block;
+    font-size: 22px;
+    border-radius: 20px;
+    /* margin: 10px; */
+    outline: none;
+    padding: 0 5px;
+}
+button {
+    padding: 0 10px;
+}
+
+input {
+    width: 200px;
+}
+
+header {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto;
+    border-radius: 30px;
+    padding: 2px 20px;
+    width: fit-content;
+    gap: 10px;
+}
+.scoreDiv {
+    display: flex;
+    width: 500px;
+    margin: auto;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+p  {
+    background-color: #333;
+    width: fit-content;
+    padding: 4px 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-radius: 22px;
+
+
+}
+    
+#wrapperDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: black;
+    margin: auto;
+    width: 95%;
+}
+#wrapperDiv div {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 150px;
+    height: 170px;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.permanentHidden {
+    display: none;
+}
+
+#wrapperDiv .hiddenDiv {
+    
+    background-color: #888;
+}
+.not_visible{
+    visibility: none;
+}
+
+.addStyle {
+    
+    width: fit-content;
+    margin: auto;
+    padding: 8px 16px;
+}
+
+.resultCard {
+    background-color: #333;
+    text-align: center;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 100px auto;
+    text-transform: capitalize;
+
+}
