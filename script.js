@@ -13,6 +13,7 @@ secondPlayerElem.value = localStorage.getItem("secondPlayer")
 
 function pokemon() {
 
+    let canClick = true;
     let count = 0;
     let arrayPhotos = [];
     let playerOneScore = 0;
@@ -141,7 +142,15 @@ function pokemon() {
                 }
 
                 card.addEventListener("click", (e) => {
+
+                    if(!canClick) return;
+                    canClick = false;
                     handleClick(e, image, pokeName)
+
+                    setTimeout(() => {
+                        canClick = true;
+                    },300)
+
                 })
 
                 const cardClone = card.cloneNode(true);
@@ -149,7 +158,14 @@ function pokemon() {
                 const pokeName2 = cardClone.querySelector("h4");
 
                 cardClone.addEventListener("click", (e) => {
+
+                     if(!canClick) return;
+                    canClick = false;
                     handleClick(e, image2, pokeName2)
+
+                     setTimeout(() => {
+                        canClick = true;
+                    },300)
                 })
 
                 arrayPhotos.push(card);
