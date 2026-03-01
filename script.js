@@ -147,10 +147,8 @@ function pokemon() {
                     canClick = false;
                     handleClick(e, image, pokeName)
 
-                    setTimeout(() => {
-                        canClick = true;
-                    },400)
-
+                    canClick = true;
+                   
                 })
 
                 const cardClone = card.cloneNode(true);
@@ -163,10 +161,8 @@ function pokemon() {
                     canClick = false;
                     handleClick(e, image2, pokeName2)
 
-                     setTimeout(() => {
-                        canClick = true;
-                    },400)
-                })
+                     canClick = true;
+                 })
 
                 arrayPhotos.push(card);
                 arrayPhotos.push(cardClone);
@@ -224,3 +220,4 @@ function pokemon() {
 //                                                 "title":"cathedral"},{"type":"search","title":"travel destination"},{"type":"search","title":"landmark"},
 //                                                 {"type":"search","title":"dome"},{"type":"search","title":"st pauls cathedral"},{"type":"search",
 //                                                     "title":"religious building"}],"views":314272,"downloads":2038,"topics":[]}
+
