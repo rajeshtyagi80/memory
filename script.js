@@ -92,7 +92,6 @@ function pokemon() {
                         container.textContent = "";
                         resultElem.textContent = playerOneScore > playerTwoScore ? `${playerOne} Won!` : playerOneScore < playerTwoScore ?
                             `${playerTwo} Won!` : "Game Draw!";
-                        console.log("hello")
                         playerTurnElem.parentElement.classList.add("hidden");
                         resultElem.parentElement.classList.remove("hidden")
                         finalScore.textContent = `${playerOneScore}-${playerTwoScore}`;
@@ -115,64 +114,60 @@ function pokemon() {
     (async function fetchPhotos() {
 
         for (i = startnumber; i <= uniquePokemon + startnumber - 1; i++) {
-            for ( let j = 1; j <= 2; j++) {
+            for (let j = 1; j <= 2; j++) {
 
-            let response;
-            const clone = imageTemp.content.cloneNode(true);
-            const card = clone.querySelector("div");
-            const image = card.querySelector("img");
-            const pokeName = card.querySelector("h4");
-            let data;
+                let response;
+                const clone = imageTemp.content.cloneNode(true);
+                const card = clone.querySelector("div");
+                const image = card.querySelector("img");
+                const pokeName = card.querySelector("h4");
+                let data;
 
-            try {
+                try {
 
-                response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-                data = await response.json();
-                console.log(data)
-                pokeName.textContent = data.name.toUpperCase();
-                image.src = data.sprites.other["official-artwork"].front_default;
-            } catch (error) {
-                console.error(error)
-                console.log("hello")
-                response = await fetch(`https://api.unsplash.com/photos/random?client_id=vLWPu4HPf9jVw6Mxk89Fv_7PYQfLqcYuJayi2CnFHDE`);
-                data = await response.json();
+                    response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+                    data = await response.json();
+                    pokeName.textContent = data.name.toUpperCase();
+                    image.src = data.sprites.other["official-artwork"].front_default;
+                } catch (error) {
+                    console.error(error)
+                    console.log("hello")
+                    response = await fetch(`https://api.unsplash.com/photos/random?client_id=vLWPu4HPf9jVw6Mxk89Fv_7PYQfLqcYuJayi2CnFHDE`);
+                    data = await response.json();
 
 
-                pokeName.textContent = data.user.first_name.toUpperCase();
-                image.src = data.urls.small;
-            }
+                    pokeName.textContent = data.user.first_name.toUpperCase();
+                    image.src = data.urls.small;
+                }
 
-            console.log(data);
+                card.addEventListener("click", (e) => {
+                    handleClick(e, image, pokeName)
+                })
 
-            card.addEventListener("click", (e) => {
-                handleClick(e, image, pokeName)
-            })
+                const cardClone = card.cloneNode(true);
+                const image2 = cardClone.querySelector("img");
+                const pokeName2 = cardClone.querySelector("h4");
 
-            const cardClone = card.cloneNode(true);
-            const image2 = cardClone.querySelector("img");
-            const pokeName2 = cardClone.querySelector("h4");
+                cardClone.addEventListener("click", (e) => {
+                    handleClick(e, image2, pokeName2)
+                })
 
-            cardClone.addEventListener("click", (e) => {
-                handleClick(e, image2, pokeName2)
-            })
-
-            arrayPhotos.push(card);
-            arrayPhotos.push(cardClone);
+                arrayPhotos.push(card);
+                arrayPhotos.push(cardClone);
 
             }
 
-            arrayPhotos.sort(() => Math.random() - 0.5);
 
-            arrayPhotos.forEach(elem => {
-                container.appendChild(elem);
-
-            })
-            if (i === uniquePokemon + startnumber - 1) {
-                 i = uniquePokemon * 2;
-                return;
-            }
         };
+        arrayPhotos.sort(() => Math.random() - 0.5);
 
+        arrayPhotos.forEach(elem => {
+            container.appendChild(elem);
+
+        })
+
+        i = uniquePokemon * 2;
+       
     })();
 }
 
