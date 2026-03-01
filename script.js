@@ -105,7 +105,7 @@ function pokemon() {
                     element.classList.remove("visible");
                     setTimeout(() => {
                         element.classList.add("hidden");
-                    }, 600)
+                    }, 400)
                 })
             }
         }
@@ -149,7 +149,7 @@ function pokemon() {
 
                     setTimeout(() => {
                         canClick = true;
-                    },300)
+                    },400)
 
                 })
 
@@ -165,7 +165,7 @@ function pokemon() {
 
                      setTimeout(() => {
                         canClick = true;
-                    },300)
+                    },400)
                 })
 
                 arrayPhotos.push(card);
