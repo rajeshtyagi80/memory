@@ -143,12 +143,12 @@ function pokemon() {
 
                 card.addEventListener("click", (e) => {
 
-                    if(!canClick) return;
+                    if (!canClick) return;
                     canClick = false;
                     handleClick(e, image, pokeName)
 
                     canClick = true;
-                   
+
                 })
 
                 const cardClone = card.cloneNode(true);
@@ -157,12 +157,13 @@ function pokemon() {
 
                 cardClone.addEventListener("click", (e) => {
 
-                     if(!canClick) return;
+                    if (!canClick) return;
                     canClick = false;
                     handleClick(e, image2, pokeName2)
 
-                     canClick = true;
-                 })
+                    canClick = true;
+
+                })
 
                 arrayPhotos.push(card);
                 arrayPhotos.push(cardClone);
@@ -171,7 +172,8 @@ function pokemon() {
 
 
         };
-        arrayPhotos.sort(() => Math.random() - 0.5);
+        
+        shuffleArray(arrayPhotos);
 
         arrayPhotos.forEach(elem => {
             container.appendChild(elem);
@@ -179,8 +181,18 @@ function pokemon() {
         })
 
         i = uniquePokemon * 2;
-       
+
     })();
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    // Pick a random index before the current element
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Swap the current element with the random element
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 
@@ -220,4 +232,3 @@ function pokemon() {
 //                                                 "title":"cathedral"},{"type":"search","title":"travel destination"},{"type":"search","title":"landmark"},
 //                                                 {"type":"search","title":"dome"},{"type":"search","title":"st pauls cathedral"},{"type":"search",
 //                                                     "title":"religious building"}],"views":314272,"downloads":2038,"topics":[]}
-
