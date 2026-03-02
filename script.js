@@ -105,7 +105,7 @@ function pokemon() {
                     element.classList.remove("visible");
                     setTimeout(() => {
                         element.classList.add("hidden");
-                    }, 400)
+                    }, 600)
                 })
             }
         }
@@ -232,3 +232,4 @@ function shuffleArray(array) {
 //                                                 "title":"cathedral"},{"type":"search","title":"travel destination"},{"type":"search","title":"landmark"},
 //                                                 {"type":"search","title":"dome"},{"type":"search","title":"st pauls cathedral"},{"type":"search",
 //                                                     "title":"religious building"}],"views":314272,"downloads":2038,"topics":[]}
+
